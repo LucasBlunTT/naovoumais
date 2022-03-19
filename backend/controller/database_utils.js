@@ -20,4 +20,14 @@ const getFrom = (res, selected, table) => {
     })
 }
 
-module.exports = { start, getFrom }
+const getUser = (req, email) =>{
+    db.query(`SELECT email, password FROM public.users WHERE email='${email}'`, function query (err, result) {
+        if (err) {
+            console.log(err);
+            return
+        }
+        this.user = result.rows
+    })
+    return this.user
+}
+module.exports = { start, getFrom, getUser }

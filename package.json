@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon backend/index.js"
   },
   "author": "Igor Silvestre and Lucas da Silva",
   "license": "ISC",
