@@ -7,9 +7,8 @@ const PORT = 3000
 
 // HOME
 app.get ('/', (req, res) => {
-    // db.start()
-    // db.getFrom(res, '*', 'users')
-    res.sendFile(path.join('/public/index.html'))
+    // LIST ALL PRODUCTS
+    db.getFrom(res, '*', 'product')
 })
 
 // LOGIN PAGE
