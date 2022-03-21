@@ -1,4 +1,6 @@
+const res = require('express/lib/response');
 const { Client } = require('pg');
+
 const start = () => {
     db = new Client({
         host: 'localhost',
@@ -20,14 +22,21 @@ const getFrom = (res, selected, table) => {
     })
 }
 
-const getUser = (req, email) =>{
-    db.query(`SELECT email, password FROM public.users WHERE email='${email}'`, function query (err, result) {
+const authenticateUser = (res, email, password) =>{
+    start()
+    db.query(`SELECT email, password FROM public.users WHERE email='${email}'`, (err, result) => {
+        // BREAKS IF EMAIL INCORRECT
         if (err) {
             console.log(err);
-            return
+            res.status(400).send(err);
         }
-        this.user = result.rows
+        else if(email == result.rows[0].email) {
+            if(password == result.rows[0].password) {
+                res.status(200).send('OK')
+            }
+            res.status(200).send('Incorrect password')
+        }
     })
-    return this.user
 }
-module.exports = { start, getFrom, getUser }
+
+module.exports = { start, getFrom, authenticateUser }

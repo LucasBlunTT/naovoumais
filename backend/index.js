@@ -24,18 +24,7 @@ app.post('/auth', (req, res) => {
     // let temp = JSON.stringify(req.body)
     let email = req.body.email
     let password = req.body.password
-    db.start()
-    let user = db.getUser(email)
-    console.log(user)
-    if (password == null) {
-        res.send("Email doesn't exist")
-    }
-    else if(password == db.getUser(email)) {
-        res.send('Success')
-    }
-    else {
-        res.send('Password incorrect')
-    }
+    db.authenticateUser(res, email, password)
 })
 
 // LISTENER
