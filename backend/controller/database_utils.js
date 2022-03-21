@@ -11,8 +11,9 @@ const start = () => {
     db.connect()
 }
 
-const getFrom = (res, selected, table) => {
-    db.query(`SELECT ${selected} FROM public.${table}`, (err, result) => {
+const getFrom = (res, column, table) => {
+    start()
+    db.query(`SELECT ${column} FROM public.${table}`, (err, result) => {
         if (err) {
             console.log(err);
             res.status(400).send(err);
