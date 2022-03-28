@@ -34,7 +34,7 @@ const authenticateUser = (res, email, password) =>{
             if(password == result.rows[0].password) {
                 res.status(200).send('OK')
             }
-            res.status(200).send('Incorrect password')
+            res.send('Incorrect password')
         }
     })
 }
