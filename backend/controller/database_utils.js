@@ -28,11 +28,11 @@ const authenticateUser = (res, email, password) =>{
         // BREAKS IF EMAIL INCORRECT
         if (err) {
             console.log(err);
-            res.status(400).send(err);
+            res.send(err);
         }
         else if(email == result.rows[0].email) {
             if(password == result.rows[0].password) {
-                res.status(200).send('OK')
+                res.send('OK')
             }
             res.send('Incorrect password')
         }
