@@ -22,11 +22,11 @@ const getFrom = (res, column, table) => {
     })
 }
 
-const authenticateUser = (res, email, password) =>{
+const authenticateUser = (res, email, password) => {
     start()
     db.query(`SELECT email, password FROM public.users WHERE email='${email}'`, (err, result) => {
         // BREAKS IF EMAIL INCORRECT
-        if (err) {
+        if(err) {
             console.log(err);
             res.send(err);
         }
@@ -34,7 +34,9 @@ const authenticateUser = (res, email, password) =>{
             if(password == result.rows[0].password) {
                 res.send('OK')
             }
-            res.send('Incorrect password')
+            else {
+                res.send('Incorrect password')
+            }
         }
     })
 }
