@@ -30,6 +30,13 @@ h11 {
   color: red;
 }
 
+.apis .api-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
 #logo {
   width: 50%;
   height: 50%;
@@ -49,7 +56,7 @@ h11 {
   height: 31px;
   border-radius: -6px;
   border-color: transparent !important;
-  background: #57b846;
+
   justify-content: center;
   align-items: center;
   padding: 0 25px;
@@ -57,10 +64,6 @@ h11 {
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-}
-
-.btn.btn-primary:hover {
-  background: #333333;
 }
 
 .btn-success {
@@ -86,7 +89,7 @@ h11 {
   background: #333333;
 }
 
-.btn-danger{
+.btn-danger {
   font-family: "Montserrat-Bold";
   font-size: 11px;
   line-height: 1.5;
@@ -94,7 +97,7 @@ h11 {
   text-transform: uppercase;
   height: 31px;
   border-radius: -6px;
- 
+
   justify-content: center;
   align-items: center;
   padding: 0 25px;
@@ -104,7 +107,7 @@ h11 {
   transition: all 0.4s;
 }
 
-.btn-danger:hover{
+.btn-danger:hover {
   background: #ffffff;
   color: #D9534F;
 }
@@ -126,6 +129,7 @@ h11 {
     padding-left: 172px;
     padding-right: 172px;
   }
+
   .btn.btn-primary {
     max-width: 182px;
     margin-top: 10px;
