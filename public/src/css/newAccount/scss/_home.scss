@@ -1,0 +1,21 @@
+section {
+  .container {
+    @include flex(column, center, center);
+
+    .button-google{
+      margin-top: 2rem;
+    }
+    .register {
+      margin-top: 3.5rem;
+      width: 100%;
+      max-width: 39rem;
+      height: 50rem;
+      .form-group {
+        margin-top: 1.4rem;
+        input {
+          height: 4.2rem;
+        }
+      }
+    }
+  }
+}
