@@ -11,7 +11,8 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.static('public'))
 
 // AUTHENTICATION POST REQUEST
-require('./src/controller/authentication')(app)
+require('./src/controller/authController')(app)
+require('./src/controller/checkUserController')(app)
 
 // LISTENER
 app.listen (PORT, () => console.log(`Server running on localhost:${PORT}`))

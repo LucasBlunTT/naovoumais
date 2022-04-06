@@ -14,8 +14,8 @@ function sha512(password, salt){
     };
 }
 
-function authenticatePassword(loginPassword, saltOnDb, hashOnDb) {
-    attemptPassword = sha512(loginPassword, saltOnDb)
+function authenticatePassword(loginPassword, hashOnDb, saltOnDb) {
+    let attemptPassword = sha512(loginPassword, saltOnDb)
     return hashOnDb === attemptPassword.hash
  }
 
