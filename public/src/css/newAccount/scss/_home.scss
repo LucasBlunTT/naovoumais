@@ -21,8 +21,10 @@
 body {
   background-color: black;
 }
+
 section {
   margin-top: 70px;
+
   .container {
     @include flex(column, center, center);
 
@@ -60,6 +62,7 @@ section {
     .button-google {
       margin-top: 2rem;
     }
+
     .register {
       margin-top: 3.5rem;
       width: 100%;
@@ -75,8 +78,10 @@ section {
         color: #fff;
         text-transform: uppercase;
       }
+
       .form-group {
         margin-top: 1.4rem;
+
         input {
           height: 4.2rem;
         }
